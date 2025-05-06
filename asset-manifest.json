@@ -1,0 +1,35 @@
+{
+  "files": {
+    "main.css": "/static/css/main.7dda774c.css",
+    "main.js": "/static/js/main.09d9e2e8.js",
+    "static/css/487.bb36206c.chunk.css": "/static/css/487.bb36206c.chunk.css",
+    "static/js/487.7ae187c0.chunk.js": "/static/js/487.7ae187c0.chunk.js",
+    "static/css/990.c6a7ee28.chunk.css": "/static/css/990.c6a7ee28.chunk.css",
+    "static/js/990.d89d6f35.chunk.js": "/static/js/990.d89d6f35.chunk.js",
+    "static/media/selfLogo.png": "/static/media/selfLogo.068c86b3732a0981bd70.png",
+    "static/media/ITLabsLogo.png": "/static/media/ITLabsLogo.6b9c441fc9eb60ee8f2a.png",
+    "static/media/kkiLogo.png": "/static/media/kkiLogo.2427c47fbdbae8ba538d.png",
+    "static/media/MSPLogo.png": "/static/media/MSPLogo.7a808c5c723e5aa43442.png",
+    "static/media/Montserrat-Regular.ttf": "/static/media/Montserrat-Regular.3cd786652b8a2e9d41f2.ttf",
+    "static/media/pcapLogo.png": "/static/media/pcapLogo.25af553b57ae4fcacccc.png",
+    "static/media/slcLogo.png": "/static/media/slcLogo.1c7c15d4047aaceae18b.png",
+    "static/media/Agustina.woff": "/static/media/Agustina.eb0c59dda4cc308cba96.woff",
+    "static/media/mtaLogo.png": "/static/media/mtaLogo.9b429cf7a0bf4d5d1689.png",
+    "static/media/firebrandLogo.png": "/static/media/firebrandLogo.e180773a273622284197.png",
+    "static/media/g4sLogo.png": "/static/media/g4sLogo.f88d8e0014dc84ddd9cb.png",
+    "static/media/sc900.png": "/static/media/sc900.f7a894e9b2d75b580c5a.png",
+    "static/media/gatesheadLogo.png": "/static/media/gatesheadLogo.b076959c0ce010b778f6.png",
+    "static/media/skill.svg": "/static/media/skill.35a147662ab0a1d15e579690446e0258.svg",
+    "index.html": "/index.html",
+    "main.7dda774c.css.map": "/static/css/main.7dda774c.css.map",
+    "main.09d9e2e8.js.map": "/static/js/main.09d9e2e8.js.map",
+    "487.bb36206c.chunk.css.map": "/static/css/487.bb36206c.chunk.css.map",
+    "487.7ae187c0.chunk.js.map": "/static/js/487.7ae187c0.chunk.js.map",
+    "990.c6a7ee28.chunk.css.map": "/static/css/990.c6a7ee28.chunk.css.map",
+    "990.d89d6f35.chunk.js.map": "/static/js/990.d89d6f35.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7dda774c.css",
+    "static/js/main.09d9e2e8.js"
+  ]
+}
