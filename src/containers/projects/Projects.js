@@ -45,7 +45,9 @@ export default function Projects() {
   ) {
     return (
       <Suspense fallback={renderLoader()}>
+        {/* Ensure this ID matches the header link if it points here */}
         <div className="main" id="opensource">
+          {/* This heading uses project-title, centering handled in SCSS */}
           <h1 className="project-title">Open Source Projects</h1>
           <div className="repo-cards-div-main">
             {repo.map((v, i) => {

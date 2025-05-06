@@ -1,70 +1,95 @@
 @import "../../_globalColor";
 
+.skill-progress-container {
+  display: flex;
+  width: 100%;
+  margin-top: 3rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.skills-bar-container {
+  flex: 1 1 55%;
+  min-width: 280px;
+  padding-right: 2rem;
+}
+
+.skills-image-container {
+  flex: 1 1 40%;
+  min-width: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.skills-heading {
+  font-size: 36px;
+  font-weight: 400;
+  text-align: center; // Centered heading
+  margin-bottom: 1.5rem;
+}
+
+.skill {
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.skill p {
+  margin-bottom: 0.3rem;
+  font-weight: 500;
+}
+
 .meter {
-  height: 20px;
+  height: 12px;
   position: relative;
   background: $progressBarBackground;
-  -moz-border-radius: 25px;
-  -webkit-border-radius: 25px;
   border-radius: 25px;
-}
-.meter > span {
-  display: block;
-  height: 100%;
-  border-top-right-radius: 6px;
-  border-bottom-right-radius: 6px;
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
-  background-color: $progressBarSpanBG;
-  position: relative;
   overflow: hidden;
 }
-.skill {
-  line-height: 3.5vw;
+
+.meter > span.progress-bar {
+  display: block;
+  height: 100%;
+  background-color: $progressBarSpanBG;
+  position: relative;
+  transition: width 0.5s ease-in-out;
 }
-.skill-bars {
-  font-size: 28px;
-  width: 40%;
+
+.meter > span.progress-bar.dark-mode {
+   background-color: darken($progressBarSpanBG, 15%);
 }
-.skills-container {
-  display: flex;
-  width: 90%;
-  padding: 20px 10px;
-  margin: 0px auto;
-  margin-top: 2rem;
-}
-.skills-container > * {
-  flex: 1;
-  margin-bottom: 30px;
-}
-.skills-image > img {
-  margin-left: 80px;
-  max-width: 90%;
+
+.skills-image-container > div,
+.skills-image-container > img {
+  max-width: 100%;
   height: auto;
 }
 
 /* Media Query */
-
-@media (max-width: 1456px) {
-  .skills-bar {
-    line-height: 4rem;
-  }
-  .skills-image {
-    display: none;
-    order: 2;
+@media (max-width: 992px) {
+  .skills-bar-container {
+    padding-right: 1rem;
   }
 }
 
 @media (max-width: 768px) {
-  .skills-container {
+  .skill-progress-container {
     flex-direction: column;
+    margin-top: 2rem;
   }
-  .skills-bar {
-    line-height: 3rem;
-    margin: 20px;
+  .skills-bar-container {
+    width: 100%;
+    padding-right: 0;
+    order: 1;
+    margin-bottom: 2rem;
   }
-  .skills-image {
-    display: none;
+  .skills-image-container {
+    width: 70%;
+    max-width: 300px;
     order: 2;
+    /* display: none; */ // Keep image displayed unless requested otherwise
+  }
+  .skills-heading {
+     font-size: 30px;
   }
 }

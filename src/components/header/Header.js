@@ -1,36 +1,35 @@
 import React, {useContext} from "react";
 import Headroom from "react-headroom";
 import "./Header.scss";
-import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
 import StyleContext from "../../contexts/StyleContext";
 import {
   greeting,
-  workExperiences,
+  workExperience, // Assuming singular in portfolio.js
   skillsSection,
-  openSource,
+  bigProjects, // Use this for display check
   blogSection,
   talkSection,
-  achievementSection,
-  resumeSection
+  achievementSection
 } from "../../portfolio";
 
 function Header() {
   const {isDark} = useContext(StyleContext);
-  const viewExperience = workExperiences.display;
-  const viewOpenSource = openSource.display;
+  const viewExperience = workExperience.display;
+  const viewProjects = bigProjects.display; // Check bigProjects display
   const viewSkills = skillsSection.display;
   const viewAchievement = achievementSection.display;
   const viewBlog = blogSection.display;
   const viewTalks = talkSection.display;
-  const viewResume = resumeSection.display;
+  const cvLink = greeting.resumeLink; // Get CV link directly
 
   return (
     <Headroom>
       <header className={isDark ? "dark-menu header" : "header"}>
         <a href="/" className="logo">
-          <span className="grey-color"> &lt;</span>
+          {/* Corrected syntax using curly braces for literal strings */}
+          <span className="grey-color">{' <'}</span>
           <span className="logo-name">{greeting.username}</span>
-          <span className="grey-color">/&gt;</span>
+          <span className="grey-color">{'/>'}</span>
         </a>
         <input className="menu-btn" type="checkbox" id="menu-btn" />
         <label
@@ -48,12 +47,12 @@ function Header() {
           )}
           {viewExperience && (
             <li>
-              <a href="#experience">Work Experiences</a>
+              <a href="#experience">Work Experience</a>
             </li>
           )}
-          {viewOpenSource && (
+          {viewProjects && (
             <li>
-              <a href="#opensource">Open Source</a>
+              <a href="#projects">Projects</a>
             </li>
           )}
           {viewAchievement && (
@@ -71,20 +70,17 @@ function Header() {
               <a href="#talks">Talks</a>
             </li>
           )}
-          {viewResume && (
+          {cvLink && (
             <li>
-              <a href="#resume">Resume</a>
+              <a href={cvLink} target="_blank" rel="noopener noreferrer">
+                CV
+              </a>
             </li>
           )}
           <li>
             <a href="#contact">Contact Me</a>
           </li>
-          <li>
-            {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-            <a>
-              <ToggleSwitch />
-            </a>
-          </li>
+          {/* Removed ToggleSwitch li */}
         </ul>
       </header>
     </Headroom>

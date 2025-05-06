@@ -2,9 +2,9 @@ import React, {useContext} from "react";
 import {Fade} from "react-reveal";
 import emoji from "react-easy-emoji";
 import "./Greeting.scss";
-import landingPerson from "../../assets/lottie/landingPerson";
+import landingPerson from "../../assets/lottie/landingPerson"; // Make sure this Lottie file exists
 import DisplayLottie from "../../components/displayLottie/DisplayLottie";
-import SocialMedia from "../../components/socialMedia/SocialMedia";
+// import SocialMedia from "../../components/socialMedia/SocialMedia"; // Removed - icons moved to contact section
 import Button from "../../components/button/Button";
 import {illustration, greeting} from "../../portfolio";
 import StyleContext from "../../contexts/StyleContext";
@@ -36,17 +36,17 @@ export default function Greeting() {
               >
                 {greeting.subTitle}
               </p>
-              <div id="resume" className="empty-div"></div>
-              <SocialMedia />
+              {/* <SocialMedia />  Removed from here */}
               <div className="button-greeting-div">
                 <Button text="Contact me" href="#contact" />
                 {greeting.resumeLink && (
                   <a
-                    href={require("./resume.pdf")}
-                    download="Resume.pdf"
+                    href={greeting.resumeLink} // Uses the link from portfolio.js
+                    target="_blank"           // Opens in a new tab
+                    rel="noopener noreferrer" // Security measure
                     className="download-link-button"
                   >
-                    <Button text="Download my resume" />
+                    <Button text="View my CV" />
                   </a>
                 )}
               </div>
@@ -56,10 +56,7 @@ export default function Greeting() {
             {illustration.animated ? (
               <DisplayLottie animationData={landingPerson} />
             ) : (
-              <img
-                alt="man sitting on table"
-                src={require("../../assets/images/manOnTable.svg")}
-              ></img>
+              null // Keep img fallback commented/removed
             )}
           </div>
         </div>

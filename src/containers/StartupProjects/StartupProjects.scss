@@ -1,5 +1,31 @@
 @import "../../_globalColor";
 
+.main {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  width: 90%;
+  margin: 0 auto;
+}
+
+// Center the H1 heading for this section - DEFAULT (Large Screens)
+.skills-heading {
+  // text-align: center; // REMOVED from here
+  text-align: left; // Explicitly set to left for large screens (or remove line for default)
+  margin-bottom: 0.5rem;
+  font-size: 52px;
+  font-weight: 400;
+}
+
+// Center the subtitle paragraph - DEFAULT (Large Screens)
+.project-subtitle {
+  // text-align: center; // REMOVED from here
+  text-align: left; // Explicitly set to left for large screens (or remove line for default)
+  margin-bottom: 2.5rem;
+  font-size: 18px;
+  color: $subTitle;
+}
+
+/* Keeping original styles below */
 .card-image {
   max-width: 100%;
   height: auto;
@@ -25,6 +51,7 @@
   border-radius: 10px;
   border: 1px solid $lightBorder1;
   justify-content: center;
+  margin-top: 40px
 }
 .project-card-light {
   box-shadow: $lightBoxShadowDark 0px 10px 30px -15px;
@@ -83,8 +110,20 @@
 }
 
 @media (max-width: 768px) {
+  .main {
+     width: 95%;
+  }
+  // Center heading ONLY on smaller screens
+  .skills-heading {
+     font-size: 30px;
+     text-align: center; // ADDED centering here
+  }
+  // Center subtitle ONLY on smaller screens
   .project-subtitle {
     font-size: 16px;
-    text-align: center;
+    text-align: center; // ADDED centering here
+  }
+  .projects-container {
+     grid-template-columns: 1fr;
   }
 }

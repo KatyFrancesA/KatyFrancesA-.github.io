@@ -19,8 +19,10 @@ export default function StartupProject() {
   }
   return (
     <Fade bottom duration={1000} distance="20px">
+      {/* Ensure this ID matches the header link */}
       <div className="main" id="projects">
         <div>
+          {/* This heading uses skills-heading, centering handled in SCSS */}
           <h1 className="skills-heading">{bigProjects.title}</h1>
           <p
             className={

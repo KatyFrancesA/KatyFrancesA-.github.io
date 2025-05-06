@@ -1,13 +1,38 @@
+/* src/containers/splashScreen/SplashScreen.css */
+
 .splash-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+
+  /* Add these properties */
+  position: fixed; /* Take it out of normal flow, cover viewport */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff; /* Default light background, adjust if needed */
+  z-index: 9999; /* High z-index to cover everything initially */
 }
 
+/* Add background for dark mode splash */
+.dark-mode.splash-container {
+  background-color: #1a1a1a; /* Example dark background, match your theme */
+}
+
+
 .splash-animation-container {
-  height: 50vh;
+  max-width: 50%;
+  max-height: 50vh;
+  margin-bottom: 25px;
+  width: 100%;
+}
+
+.splash-animation-container > div {
+  width: 100%;
+  height: 100%;
 }
 
 .splash-title-container {
@@ -20,4 +45,14 @@
   font-variant-ligatures: no-common-ligatures;
   -webkit-font-variant-ligatures: no-common-ligatures;
   padding: 0 20px;
+}
+
+@media (max-width: 768px) {
+  .splash-animation-container {
+    max-width: 70%;
+    max-height: 60vh;
+  }
+  .splash-title-container {
+    font-size: 2rem;
+  }
 }

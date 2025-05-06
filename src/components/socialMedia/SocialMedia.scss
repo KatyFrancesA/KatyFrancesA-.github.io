@@ -28,8 +28,8 @@
   transition: 0.2s ease-in;
 }
 
-.facebook i {
-  background-color: $faceBook;
+.icon-button.phone i {
+  background-color: rgb(112, 1, 114); 
 }
 
 .linkedin i {
@@ -48,10 +48,6 @@
   background-color: $google;
 }
 
-.twitter i {
-  background-color: $twitter;
-}
-
 .medium i {
   background-color: $medium;
 }
@@ -64,18 +60,12 @@
   background-color: $kaggle;
 }
 
-.instagram i {
-  background-color: $instagram;
-}
-
 /* Hover Transition */
-.twitter i:hover,
 .google i:hover,
 .gitlab i:hover,
 .github i:hover,
 .linkedin i:hover,
-.facebook i:hover,
-.instagram i:hover,
+.icon-button i:hover,
 .stack-overflow i:hover,
 .kaggle i:hover,
 .medium i:hover {

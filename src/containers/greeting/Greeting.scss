@@ -15,19 +15,30 @@
 
 .greeting-main {
   display: flex;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
-.subTitle {
-  color: $subTitle !important;
-}
-
-.greeting-main {
-  display: flex;
-}
-
-.greeting-main > * {
-  flex: 1;
+.greeting-text-div {
+  flex: 1 1 55%;
+  min-width: 320px; /* Slightly increased min-width */
   margin-bottom: 30px;
+  padding-right: 20px; /* Add some padding on the right */
+}
+
+.greeting-image-div {
+  flex: 1 1 40%;
+  min-width: 280px; /* Slightly increased min-width */
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.greeting-image-div > div,
+.greeting-image-div > img {
+  max-width: 100%;
+  height: auto;
 }
 
 .empty-div {
@@ -37,6 +48,8 @@
 .button-greeting-div {
   display: flex;
   margin-top: 40px;
+  flex-wrap: wrap;
+  gap: 15px;
 }
 .download-link-button {
   text-decoration: none;
@@ -53,11 +66,6 @@
   line-height: 40px;
 }
 
-.greeting-image-div > img {
-  max-width: 100%;
-  height: auto;
-}
-
 .wave-emoji {
   animation-duration: 1.8s;
   animation-iteration-count: infinite;
@@ -67,27 +75,13 @@
 }
 
 @keyframes wave {
-  0% {
-    transform: rotate(0deg);
-  }
-  10% {
-    transform: rotate(-10deg);
-  }
-  20% {
-    transform: rotate(12deg);
-  }
-  30% {
-    transform: rotate(-10deg);
-  }
-  40% {
-    transform: rotate(9deg);
-  }
-  50% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
+  0% { transform: rotate(0deg); }
+  10% { transform: rotate(-10deg); }
+  20% { transform: rotate(12deg); }
+  30% { transform: rotate(-10deg); }
+  40% { transform: rotate(9deg); }
+  50% { transform: rotate(0deg); }
+  100% { transform: rotate(0deg); }
 }
 
 /* Media Query */
@@ -99,24 +93,37 @@
     font-size: 20px;
   }
 }
-@media (max-width: 768px) {
+
+/* Adjust stacking breakpoint slightly earlier if needed */
+@media (max-width: 850px) { /* Changed from 768px */
+  .greeting-main {
+    flex-direction: column;
+  }
+  .greeting-text-div {
+    order: 2;
+    text-align: center;
+    margin-left: 0;
+    margin-right: 0;
+    padding-right: 0; /* Remove padding when stacked */
+    margin-top: 30px; /* Add consistent top margin when stacked */
+  }
+  .greeting-image-div {
+    order: 1;
+    margin-bottom: 20px;
+    max-height: 400px;
+    width: 80%; /* Control width when stacked */
+    margin-left: auto;
+    margin-right: auto;
+  }
   .button-greeting-div {
-    justify-content: space-around;
+    justify-content: center;
   }
   .greeting-text {
     font-size: 30px;
-    text-align: center;
   }
   .greeting-text-p {
     font-size: 16px;
     line-height: normal;
-    text-align: center;
-  }
-  .greeting-main {
-    display: block;
-  }
-  .greeting-image-div {
-    height: 256px;
   }
 }
 

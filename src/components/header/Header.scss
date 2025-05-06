@@ -1,11 +1,24 @@
+// src/components/header/Header.scss
+
 @import "../../_globalColor";
 
 /*React-headroom*/
 .headroom-wrapper {
   max-height: 100px;
+  position: relative;
+  z-index: 10000; /* High z-index */
 }
 
-/* header */
+/* header - Base Styles (Mobile First) */
+
+.header {
+  background-color: $lightBackground1;
+  max-width: 100%;
+  padding: 15px 20px;
+  margin: 0px auto;
+  position: relative; /* Needed for z-index */
+  z-index: 10000; /* High z-index */
+}
 
 .dark-menu {
   background-color: $darkBackground !important;
@@ -20,18 +33,11 @@
   background-color: $buttonColor !important;
 }
 
-.header {
-  background-color: $lightBackground1;
-  max-width: 100%;
-  padding: 15px 20px;
-  margin: 0px auto;
-}
-
 .header ul {
   margin: 0;
   padding: 0;
   list-style: none;
-  overflow: hidden;
+  overflow: hidden; /* For mobile menu animation */
 }
 
 .grey-color {
@@ -52,11 +58,11 @@
 
 .header .logo {
   display: block;
-  flex: none;
-  float: left;
+  flex: none; /* Prevent shrinking/growing in flex context later */
+  float: left; /* Float for mobile layout */
   font-size: 1.5em;
   text-decoration: none;
-  margin-top: 10px;
+  margin-top: 10px; /* Adjust as needed for vertical alignment on mobile */
   line-height: normal;
 }
 
@@ -68,21 +74,21 @@
   padding: 0 10px;
 }
 
-/* menu */
+/* menu - Mobile */
 
 .header .menu {
-  clear: both;
-  max-height: 0;
+  clear: both; /* Clear float for mobile */
+  max-height: 0; /* Hidden initially for mobile */
   transition: max-height 0.2s ease-out;
 }
 
-/* menu icon */
+/* menu icon - Mobile Hamburger */
 
 .header .menu-icon {
   cursor: pointer;
   display: inline-block;
-  float: right;
-  padding: 28px 20px;
+  float: right; /* Position hamburger on the right */
+  padding: 28px 20px; /* Adjust padding for alignment */
   position: relative;
   user-select: none;
 }
@@ -130,14 +136,15 @@
   top: -5px;
 }
 
-/* menu btn */
+/* menu btn - Mobile Checkbox */
 
 .header .menu-btn {
-  display: none;
+  display: none; /* Hide the checkbox */
 }
 
+/* Mobile Menu Expansion and Hamburger Animation */
 .header .menu-btn:checked ~ .menu {
-  max-height: 486px;
+  max-height: 486px; /* Or enough height to show all items */
 }
 
 .header .menu-btn:checked ~ .menu-icon .navicon {
@@ -157,26 +164,47 @@
   top: 0;
 }
 
-/* 48em = 768px */
+/* 48em = 768px - DESKTOP LAYOUT OVERRIDES */
 
 @media (min-width: 48em) {
-  .header li {
-    float: left;
-  }
   .header {
+    /* Apply flexbox to the main header container */
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    align-items: center; /* Vertically align logo and menu */
+    justify-content: space-between; /* Push logo left, menu right */
+    /* Base styles like background, padding, z-index are inherited */
   }
+
+  .header .logo {
+     float: none; /* Remove float */
+     margin-top: 0; /* Reset mobile margin */
+  }
+
   .header .menu {
-    max-height: none;
+    /* Apply flexbox to the UL menu container */
+    display: flex;
+    align-items: center; /* Vertically align menu items */
+    clear: none; /* Remove mobile clear */
+    max-height: none; /* Ensure menu is always visible */
+    overflow: visible; /* Ensure menu content isn't clipped */
   }
+
+  .header li {
+    float: none; /* Remove float from list items */
+    /* display: inline-block; could also work if needed */
+  }
+
   .header .menu-icon {
-    display: none;
+    display: none; /* Hide hamburger icon */
   }
 }
+
+/* Optional: Adjust font size/padding for mid-range screens */
 @media (max-width: 960px) and (min-width: 768px) {
   .header {
     font-size: 12px;
+  }
+   .header li a {
+     padding: 15px 10px; /* Slightly reduce padding */
   }
 }

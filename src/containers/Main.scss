@@ -3,5 +3,25 @@
 .dark-mode {
   background-color: $darkBackground;
   color: white;
-  transition: "0.1s";
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out; // Smoother transition
+}
+
+// This rule applies consistent padding to elements with class="main"
+// like Project.js and StartupProjects.js containers
+.main {
+  width: 90%;
+  padding-top: 4rem;    // Add consistent top padding
+  padding-bottom: 4rem; // Add consistent bottom padding
+  // padding-left: 10px;   // Removed specific side padding, width/margin handles centering
+  // padding-right: 10px;  // Removed specific side padding
+  margin: 0 auto;       // Keep centering
+}
+
+// Add responsive padding adjustments if needed
+@media (max-width: 768px) {
+  .main {
+    width: 95%;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
 }

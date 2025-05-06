@@ -1,7 +1,11 @@
+// src/containers/contact/Contact.scss
+
 @import "../../_globalColor";
 
 .contact-div-main {
   display: flex;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 .dark-mode a {
@@ -10,13 +14,27 @@
 
 .contact-div-main > * {
   flex: 1;
+  min-width: 300px;
+}
+
+.contact-header {
+  flex-basis: 55%;
+}
+
+.contact-image-div {
+  flex-basis: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .contact-title {
-  font-size: 65px;
+  font-size: 52px; // CHANGED from 56px (Try this size first)
   font-weight: 400;
+  margin-bottom: 15px;
 }
 
+/* Styles for .contact-detail, .contact-detail-email remain */
 .contact-detail,
 .contact-detail-email {
   margin-top: 20px;
@@ -33,55 +51,93 @@
   transition: all 0.3s;
 }
 
+
 .contact-subtitle {
-  text-transform: uppercase;
+  margin-bottom: 30px;
 }
 
 .contact-text-div {
   margin-top: 1.5rem;
 }
 
+.contact-buttons-div {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.contact-button-link {
+  text-decoration: none;
+}
+
+
 .contact-margin-top {
   margin-top: 4rem;
 }
 
+.contact-image-div > div,
 .contact-image-div > img {
   max-width: 100%;
   height: auto;
-  margin-left: 1.5rem;
-  margin-top: -4rem;
 }
 
 /* Media Query */
-@media (max-width: 1380px), (max-width: 768px) {
+@media (max-width: 1380px) {
   .contact-title {
-    font-size: 56px;
-    font-weight: 400;
-    text-align: center;
+    font-size: 40px; // Keep medium size
+  }
+
+  .contact-detail,
+  .contact-detail-email {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-div-main {
+    flex-direction: column;
+  }
+
+  .contact-header {
+     order: 1;
+     text-align: center;
+  }
+
+  .contact-image-div {
+     order: 2;
+     margin-top: 30px;
+     width: 70%;
+     max-width: 300px;
+     margin-left: auto;
+     margin-right: auto;
   }
 
   .contact-title {
-    font-size: 40px;
-    text-align: center;
+    font-size: 30px; 
   }
 
   .contact-subtitle {
-    font-size: 16px;
+    font-size: 15px;
     line-height: normal;
-    text-align: center;
   }
 
   .contact-text-div {
-    text-align: center;
     margin-top: 1.5rem;
+  }
+
+  .contact-buttons-div {
+    justify-content: center;
+  }
+
+  .social-media-div {
+    justify-content: center;
   }
 
   .contact-detail,
   .contact-detail-email {
     font-size: 20px;
-  }
-
-  .contact-image-div {
-    display: none;
   }
 }
